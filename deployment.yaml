@@ -11,6 +11,9 @@ environments:
       - source: dataform_local_pipeline.yaml
       - source: dataform_service_pipeline.yaml
     resources:
+      - name: weather-aggregation-repo
+        type: dataform.repository
+        definition: {}
       - type: dataform.repository.releaseConfig
         name: test-release
         definition:
