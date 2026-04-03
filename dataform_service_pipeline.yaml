@@ -19,3 +19,5 @@ actions:
             location: {{ region }}
             projectId: {{ project }}
             repositoryId: weather-aggregation-repo
+            workflowInvocation:
+              workflowConfig: projects/lpiotr-composer-dev-1/locations/us-central1/repositories/weather-aggregation-repo/workflowConfigs/subfolder-workflow

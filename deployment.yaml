@@ -37,7 +37,7 @@ environments:
       service_account: 959391033213-compute@developer.gserviceaccount.com
       network_uri: projects/lpiotr-composer-dev-1/global/networks/default
       subnetwork_uri: projects/lpiotr-composer-dev-1/regions/us-central1/subnetworks/default
-
+      region: us-central1
 
   composer2:
     project: lpiotr-composer-dev-1
