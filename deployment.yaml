@@ -14,8 +14,8 @@ environments:
       - name: weather-aggregation-repo
         type: dataform.repository
         definition: 
-          lables:
-            - bigquery-deployment:preview
+          labels:
+            bigquery-deployment: preview
       - type: dataform.repository.releaseConfig
         name: subfolder-release
         parent: weather-aggregation-repo
