@@ -15,7 +15,7 @@ environments:
         type: dataform.repository
         definition: {}
       - type: dataform.repository.releaseConfig
-        name: test-release
+        name: subfolder-release
         parent: weather-aggregation-repo
         definition:
           gitCommitish: {{ COMMIT_SHA }} 
@@ -25,10 +25,10 @@ environments:
               pipelineType: DATAFORM
               path: weather_dataform
       - type: dataform.repository.workflowConfig
-        name: test-workflow
+        name: subfolder-workflow
         parent: weather-aggregation-repo
         definition:
-          releaseConfig: test-release
+          releaseConfig: subfolder-release
     variables:
       service_account: 959391033213-compute@developer.gserviceaccount.com
       network_uri: projects/lpiotr-composer-dev-1/global/networks/default
