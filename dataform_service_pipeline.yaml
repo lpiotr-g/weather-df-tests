@@ -18,6 +18,6 @@ actions:
           dataformService:
             location: {{ region }}
             projectId: {{ project }}
-            repositoryId: weather-aggregation-repo
+            repositoryId: {{ repository_name }}
             workflowInvocation:
-              workflowConfig: projects/lpiotr-composer-dev-1/locations/us-central1/repositories/weather-aggregation-repo/workflowConfigs/subfolder-workflow
+              workflowConfig: projects/{{ project }}/locations/{{ region }}/repositories/{{ repository_name }}/workflowConfigs/{{ workflow_config_name }}

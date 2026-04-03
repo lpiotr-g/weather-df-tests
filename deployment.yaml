@@ -10,7 +10,6 @@ environments:
       - source: initilized-pipeline.yaml
       - source: dataform_local_pipeline.yaml
       - source: dataform_service_pipeline.yaml
-      - source: dataform_service_pipeline_tests.yaml
     resources:
       - name: {{ repository_name }}
         type: dataform.repository
