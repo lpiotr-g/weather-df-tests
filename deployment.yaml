@@ -13,16 +13,17 @@ environments:
     resources:
       - name: weather-aggregation-repo
         type: dataform.repository
-        definition:
-          pipelineConfigs:
-            pipelineType: DATAFORM
-            path: weather_dataform
+        definition: {}
       - type: dataform.repository.releaseConfig
         name: test-release
         parent: weather-aggregation-repo
         definition:
           gitCommitish: {{ COMMIT_SHA }} 
           releaseCompilationResult: auto
+          codeCompilationConfig:
+            pipelineConfig:
+              pipelineType: DATAFORM
+              path: weather_dataform
       - type: dataform.repository.workflowConfig
         name: test-workflow
         parent: weather-aggregation-repo
