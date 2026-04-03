@@ -16,11 +16,13 @@ environments:
         definition: {}
       - type: dataform.repository.releaseConfig
         name: test-release
+        parent: weather-aggregation-repo
         definition:
           gitCommitish: {{ COMMIT_SHA }} 
           releaseCompilationResult: auto
       - type: dataform.repository.workflowConfig
         name: test-workflow
+        parent: weather-aggregation-repo
         definition:
           releaseConfig: test-release
     variables:
