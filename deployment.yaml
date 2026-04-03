@@ -10,15 +10,16 @@ environments:
       - source: initilized-pipeline.yaml
       - source: dataform_local_pipeline.yaml
       - source: dataform_service_pipeline.yaml
+      - source: dataform_service_pipeline_tests.yaml
     resources:
-      - name: weather-aggregation-repo
+      - name: {{ repository_name }}
         type: dataform.repository
         definition: 
           labels:
             bigquery-deployment: preview
       - type: dataform.repository.releaseConfig
         name: subfolder-release
-        parent: weather-aggregation-repo
+        parent: {{ repository_name }}
         definition:
           gitCommitish: {{ COMMIT_SHA }} 
           releaseCompilationResult: auto
@@ -27,8 +28,8 @@ environments:
               pipelineType: DATAFORM
               path: weather_dataform
       - type: dataform.repository.workflowConfig
-        name: subfolder-workflow
-        parent: weather-aggregation-repo
+        name: {{ workflow_config_name }}
+        parent: {{ repository_name }}
         definition:
           releaseConfig: subfolder-release
           invocationConfig:
@@ -38,6 +39,8 @@ environments:
       network_uri: projects/lpiotr-composer-dev-1/global/networks/default
       subnetwork_uri: projects/lpiotr-composer-dev-1/regions/us-central1/subnetworks/default
       region: us-central1
+      repository_name: weather-aggregation-repo
+      workflow_config_name: subfolder-workflow
 
   composer2:
     project: lpiotr-composer-dev-1
