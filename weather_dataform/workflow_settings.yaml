@@ -1,5 +1,5 @@
 defaultProject: lpiotr-composer-dev-1
-defaultLocation: us-central1
+defaultLocation: US
 defaultDataset: weather_data
 defaultAssertionDataset: weather_data_assertions
 dataformCoreVersion: 3.0.0
