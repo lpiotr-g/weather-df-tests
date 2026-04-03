@@ -1,0 +1,6 @@
+config {
+  type: "declaration",
+  database: "lpiotr-composer-dev-1",
+  schema: "weather_data",
+  name: "sensor_readings",
+}

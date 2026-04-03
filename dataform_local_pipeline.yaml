@@ -1,0 +1,19 @@
+modelVersion: v2
+pipelineId: dataform_local_pipeline
+description: Run Dataform pipeline locally on Airflow worker
+runner: airflow
+owner: data-eng-team
+
+defaults:
+  projectId: {{ project }}
+  location: {{ region }}
+  executionConfig:
+    retries: 1
+
+actions:
+  - pipeline:
+      name: run_dataform_local
+      framework:
+        dataform:
+          airflowWorker:
+            projectDirectoryPath: weather_dataform

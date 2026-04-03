@@ -1,0 +1,22 @@
+config {
+  type: "table",
+  name: "sensor_readings_aggregated",
+  description: "Aggregated daily weather sensor readings.",
+  columns: {
+    sensor_id: "ID of the sensor.",
+    reading_date: "Date of the readings.",
+    event_count: "Total number of events.",
+    avg_temperature: "Average temperature in Celsius."
+  }
+}
+
+SELECT
+  sensor_id,
+  DATE(timestamp) AS reading_date,
+  COUNT(event_id) AS event_count,
+  AVG(weather.temperature_celsius) AS avg_temperature
+FROM
+  ${ref("sensor_readings")}
+GROUP BY
+  sensor_id,
+  reading_date

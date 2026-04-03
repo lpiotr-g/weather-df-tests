@@ -1,0 +1,6 @@
+# This workflow is supposed to run on pull requests to validate the pipelines.
+#
+# Steps:
+# - Checkout code
+# - Authenticate to GCP
+# - Validate all pipelines listed in deployment.yaml

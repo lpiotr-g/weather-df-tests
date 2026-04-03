@@ -1,0 +1,11 @@
+definition:
+  environmentConfig:
+    executionConfig:
+      service_account: "{{ service_account }}"
+      subnetwork_uri: "{{ subnetwork_uri }}"
+  runtimeConfig:
+    version: "2.3"
+    properties:
+      spark.app.name: "inline-resource-profile"
+      spark.executor.instances: "2"
+      spark.driver.cores: "4"

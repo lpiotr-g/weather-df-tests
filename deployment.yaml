@@ -1,0 +1,68 @@
+environments:
+  dev:
+    project: lpiotr-composer-dev-1
+    region: us-central1
+    composer_environment: composer3-cluster
+    artifact_storage:
+      bucket: us-central1-composer3-clust-420a3e94-bucket
+      path_prefix: another-initialized-artifact-bucket
+    pipelines:
+      - source: initilized-pipeline.yaml
+      - source: dataform_local_pipeline.yaml
+      - source: dataform_service_pipeline.yaml
+    resources:
+      - type: dataform.repository.releaseConfig
+        name: test-release
+        definition:
+          gitCommitish: {{ COMMIT_SHA }} 
+          releaseCompilationResult: auto
+      - type: dataform.repository.workflowConfig
+        name: test-workflow
+        definition:
+          releaseConfig: test-release
+    variables:
+      service_account: 959391033213-compute@developer.gserviceaccount.com
+      network_uri: projects/lpiotr-composer-dev-1/global/networks/default
+      subnetwork_uri: projects/lpiotr-composer-dev-1/regions/us-central1/subnetworks/default
+
+
+
+
+  composer2:
+    project: lpiotr-composer-dev-1
+    region: us-central1
+    composer_environment: pipelines-c2
+    artifact_storage:
+      bucket: us-central1-pipelines-c2-48706537-bucket
+      path_prefix: another-initialized-artifact-bucket
+    pipelines:
+      - source: initilized-pipeline.yaml
+      - source: dataform_local_pipeline.yaml
+      - source: dataform_service_pipeline.yaml
+    resources:
+      - name: weather-aggregation-repo
+        type: dataform.repository
+        definition: {}
+    variables:
+      service_account: 959391033213-compute@developer.gserviceaccount.com
+      network_uri: projects/lpiotr-composer-dev-1/global/networks/default
+      subnetwork_uri: projects/lpiotr-composer-dev-1/regions/us-central1/subnetworks/default
+  airflow3:
+    project: lpiotr-composer-dev-1
+    region: us-central1
+    composer_environment: pipelines-c3a3
+    artifact_storage:
+      bucket: us-central1-pipelines-c3a3-b2152343-bucket
+      path_prefix: another-initialized-artifact-bucket
+    pipelines:
+      - source: initilized-pipeline.yaml
+      - source: dataform_local_pipeline.yaml
+      - source: dataform_service_pipeline.yaml
+    resources:
+      - name: weather-aggregation-repo
+        type: dataform.repository
+        definition: {}
+    variables:
+      service_account: 959391033213-compute@developer.gserviceaccount.com
+      network_uri: projects/lpiotr-composer-dev-1/global/networks/default
+      subnetwork_uri: projects/lpiotr-composer-dev-1/regions/us-central1/subnetworks/default
