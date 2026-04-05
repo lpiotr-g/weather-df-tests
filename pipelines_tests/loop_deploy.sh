@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configuration
-LOOP_COUNT=3
+LOOP_COUNT=200
 COMMAND="../gcloud.par beta orchestration-pipelines deploy --environment=dev"
 LOG_FILE="pipelines_tests/deploy_loop.log"
 TRIGGER_FILE="pipelines_tests/trigger.txt"
