@@ -20,4 +20,4 @@ actions:
             projectId: {{ project }}
             repositoryId: {{ repository_name }}
             workflowInvocation:
-              workflowConfig: projects/{{ project }}/locations/{{ region }}/repositories/{{ repository_name }}/workflowConfigs/{{ workflow_config_name }}
+              workflowConfig: projects/{{ project }}/locations/{{ region }}/repositories/{{ repository_name }}/workflowConfigs/{{ workflow_config_name }}_{{ COMMIT_SHA }}
