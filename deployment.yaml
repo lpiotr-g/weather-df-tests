@@ -59,7 +59,7 @@ environments:
           labels:
             bigquery-deployment: preview
       - type: dataform.repository.releaseConfig
-        name: subfolder-release
+        name: subfolder-release_{{ COMMIT_SHA }} 
         parent: {{ repository_name }}
         definition:
           gitCommitish: {{ COMMIT_SHA }} 
