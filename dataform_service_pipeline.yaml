@@ -1,4 +1,4 @@
-modelVersion: 1.0
+modelVersion: '1.0'
 pipelineId: dataform_service_pipeline
 description: Updated run Dataform pipeline via Dataform Service
 runner: airflow

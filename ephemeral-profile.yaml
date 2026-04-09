@@ -1,11 +1,19 @@
+name: dataproc-ephemeral-resource-profile-test-1
+type: dataproc.cluster
 definition:
-  cluster_config:
-    master_config:
-      num_instances: 1
-      machine_type_uri: "n1-standard-4"
-    worker_config:
-      num_instances: 2
-      machine_type_uri: "n1-standard-4"
-    gce_cluster_config:
-      service_account: "{{ service_account }}"
-      subnetwork_uri: "{{ subnetwork_uri }}"
+  config:
+    masterConfig:
+      numInstances: 1
+      machineTypeUri: "n1-standard-4"
+      diskConfig:
+        bootDiskType: "pd-standard"
+        bootDiskSizeGb: 1024
+    workerConfig:
+      numInstances: 2
+      machineTypeUri: "n1-standard-4"
+      diskConfig:
+        bootDiskType: "pd-standard"
+        bootDiskSizeGb: 1024
+    gceClusterConfig:
+      serviceCccount: "{{ service_account }}"
+      subnetworkUri: "{{ subnetwork_uri }}"

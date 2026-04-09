@@ -1,4 +1,4 @@
-modelVersion: 1.0
+modelVersion: '1.0'
 pipelineId: dataform_local_pipeline
 description: Updated run Dataform pipeline locally on Airflow worker
 runner: airflow
