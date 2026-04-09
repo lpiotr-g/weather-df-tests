@@ -1,6 +1,6 @@
-modelVersion: v2
+modelVersion: 1.0
 pipelineId: dataform_local_pipeline
-description: Run Dataform pipeline locally on Airflow worker
+description: Updated run Dataform pipeline locally on Airflow worker
 runner: airflow
 owner: data-eng-team
 

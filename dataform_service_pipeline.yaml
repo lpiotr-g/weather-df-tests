@@ -1,6 +1,6 @@
-modelVersion: v2
+modelVersion: 1.0
 pipelineId: dataform_service_pipeline
-description: Run Dataform pipeline via Dataform Service
+description: Updated run Dataform pipeline via Dataform Service
 runner: airflow
 owner: data-eng-team
 
@@ -20,4 +20,7 @@ actions:
             projectId: {{ project }}
             repositoryId: {{ repository_name }}
             workflowInvocation:
-              workflowConfig: projects/{{ project }}/locations/{{ region }}/repositories/{{ repository_name }}/workflowConfigs/{{ workflow_config_name }}
+              workflowConfig: projects/{{ project }}/locations/{{ region }}/repositories/{{
+                repository_name }}/workflowConfigs/{{ workflow_config_name }}
+tags:
+  - job:datacloud:vscode
