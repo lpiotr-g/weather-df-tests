@@ -15,5 +15,5 @@ definition:
         bootDiskType: "pd-standard"
         bootDiskSizeGb: 1024
     gceClusterConfig:
-      serviceCccount: "{{ service_account }}"
+      serviceAccount: "{{ service_account }}"
       subnetworkUri: "{{ subnetwork_uri }}"
