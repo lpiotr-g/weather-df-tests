@@ -5,9 +5,9 @@ definition:
     executionConfig:
       serviceAccount: "{{ service_account }}"
       subnetworkUri: "{{ subnetwork_uri }}"
-    runtimeConfig:
-      version: "2.3"
-      properties:
-        spark.app.name: "path-file-resource-profile"
-        spark.executor.instances: "2"
-        spark.driver.cores: "4"
+  runtimeConfig:
+    version: "2.3"
+    properties:
+      spark.app.name: "path-file-resource-profile"
+      spark.executor.instances: "2"
+      spark.driver.cores: "4"
