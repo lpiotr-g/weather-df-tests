@@ -39,8 +39,48 @@ environments:
       subnetwork_uri: projects/lpiotr-composer-dev-1/regions/us-central1/subnetworks/default
       region: us-central1
       repository_name: weather-aggregation-repo
+      workflow_config_name: updated-subfolder-workflow
+  composer3-newest:
+    project: lpiotr-composer-dev-1
+    region: us-west2
+    composer_environment: composer3-newest-image
+    artifact_storage:
+      bucket: us-west2-composer3-newest-i-7d20c69d-bucket
+      path_prefix: another-initialized-artifact-bucket
+    pipelines:
+      - source: initilized-pipeline.yaml
+      - source: dataform_local_pipeline.yaml
+      - source: dataform_service_pipeline.yaml
+    resources:
+      - name: {{ repository_name }}
+        type: dataform.repository
+        definition: 
+          labels:
+            bigquery-deployment: preview
+      - type: dataform.repository.releaseConfig
+        name: subfolder-release
+        parent: {{ repository_name }}
+        definition:
+          gitCommitish: {{ COMMIT_SHA }} 
+          releaseCompilationResult: auto
+          codeCompilationConfig:
+            pipelineConfig:
+              pipelineType: DATAFORM
+              path: weather_dataform
+      - type: dataform.repository.workflowConfig
+        name: {{ workflow_config_name }}
+        parent: {{ repository_name }}
+        definition:
+          releaseConfig: subfolder-release
+          invocationConfig:
+            serviceAccount: {{ service_account }}
+    variables:
+      service_account: 959391033213-compute@developer.gserviceaccount.com
+      network_uri: projects/lpiotr-composer-dev-1/global/networks/default
+      subnetwork_uri: projects/lpiotr-composer-dev-1/regions/us-west2/subnetworks/default
+      region: us-west2
+      repository_name: weather-aggregation-repo
       workflow_config_name: subfolder-workflow
-
   composer2:
     project: lpiotr-composer-dev-1
     region: us-central1

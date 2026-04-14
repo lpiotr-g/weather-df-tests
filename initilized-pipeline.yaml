@@ -11,7 +11,7 @@ defaults:
 
 triggers:
   - schedule:
-      interval: '0 2 * * *'  # 2 AM daily
+      interval: '0 2 * * *' # 2 AM daily
       startTime: '2025-11-01T00:00:00'
       endTime: '2026-12-01T00:00:00'
       catchup: false
@@ -36,3 +36,5 @@ actions:
             resourceProfile:
               path: ephemeral-profile.yaml
       mainFilePath: fibonacci.py
+tags:
+  - job:datacloud:vscode
