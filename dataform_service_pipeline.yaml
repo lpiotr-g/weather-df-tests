@@ -26,8 +26,7 @@ actions:
       name: fibonacci_python
       mainFilePath: fibonacci.py
       pythonCallable: fibonacci
-      op_kwargs:
-        n: "10"
+      opKwargs: '{"n": 10}'
       engine:
         local: {}
   - sql:
