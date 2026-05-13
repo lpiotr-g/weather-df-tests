@@ -24,8 +24,8 @@ actions:
                 repository_name }}/workflowConfigs/{{ workflow_config_name }}
   - python:
       name: fibonacci_python
-      mainFilePath: fibonacci.py
-      pythonCallable: fibonacci
+      mainFilePath: scripts/fibonacci.py
+      pythonCallable: fibonacciTen
       engine:
         local: {}
   - sql:
