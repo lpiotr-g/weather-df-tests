@@ -18,9 +18,9 @@ actions:
           airflowWorker:
             projectDirectoryPath: weather_dataform
   - python:
-      name: "fibonacci_python"
-      mainFilePath: "fibonacci.py"
-      pythonCallable: "fibonacci"
+      name: fibonacci_python
+      mainFilePath: fibonacci.py
+      pythonCallable: fibonacciTen
       engine:
         local: {}
   - sql:
