@@ -1,6 +1,6 @@
 from pyspark.sql import SparkSession
 
-def fibonacci(n: int):
+def fibonacci(n=10):
     fib = [0, 1]
     while len(fib) < n:
         fib.append(fib[-1] + fib[-2])
