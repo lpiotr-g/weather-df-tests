@@ -19,7 +19,7 @@ actions:
             projectDirectoryPath: weather_dataform
   - python:
       name: fibonacci_python
-      mainFilePath: fibonacci.py
+      mainFilePath: "./scripts/fibonacci.py"
       pythonCallable: fibonacciTen
       engine:
         local: {}
