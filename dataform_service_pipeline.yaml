@@ -22,5 +22,20 @@ actions:
             workflowInvocation:
               workflowConfig: projects/{{ project }}/locations/{{ region }}/repositories/{{
                 repository_name }}/workflowConfigs/{{ workflow_config_name }}
+  - python:
+      name: fibonacci_python
+      mainFilePath: fibonacci.py
+      pythonCallable: fibonacci
+      opKwargs:
+        n: 10
+      engine:
+        local: {}
+  - sql:
+      name: dummy_bq_query
+      engine:
+        bigquery:
+          location: {{ region }}
+      query:
+        inline: 'SELECT 1 AS dummy'
 tags:
   - job:datacloud:vscode
