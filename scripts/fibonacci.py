@@ -3,8 +3,8 @@ def fibonacciTen():
     for i, val in enumerate(fibonacci(10)):
         print(f"Fibonacci({i}) = {val}")
 
-def fibonacci(n: int):
+def fibonacci(number: int):
     fib = [0, 1]
-    while len(fib) < n:
+    while len(fib) < number:
         fib.append(fib[-1] + fib[-2])
-    return fib[:n]
+    return fib[:number]
