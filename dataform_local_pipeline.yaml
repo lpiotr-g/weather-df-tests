@@ -22,7 +22,7 @@ actions:
       mainFilePath: fibonacci.py
       pythonCallable: fibonacci
       opKwargs:
-        n: 10
+        n: '10'
       engine:
         local: {}
   - sql:
