@@ -20,7 +20,9 @@ actions:
   - python:
       name: fibonacci_python
       mainFilePath: "./scripts/fibonacci.py"
-      pythonCallable: fibonacciTen
+      pythonCallable: fibonacci
+      opKwargs:
+        n: 10
       engine:
         local: {}
       dependsOn: 
