@@ -23,6 +23,9 @@ actions:
       pythonCallable: fibonacciTen
       engine:
         local: {}
+      dependsOn: 
+       - run_dataform_local
+
   - sql:
       name: dummy_bq_query
       engine:
@@ -30,3 +33,5 @@ actions:
           location: {{ region }}
       query:
         inline: 'SELECT COUNT(*) FROM `{{ project }}.weather_data.sensor_readings`'
+      dependsOn: 
+       - run_dataform_local
