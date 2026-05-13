@@ -31,4 +31,4 @@ actions:
         bigquery:
           location: {{ region }}
       query:
-        inline: 'SELECT 1 AS dummy'
+        inline: 'SELECT COUNT(*) FROM `{{ project }}.weather_data.sensor_readings`'
