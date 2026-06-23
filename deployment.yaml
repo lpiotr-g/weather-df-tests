@@ -1,4 +1,20 @@
 environments:
+  dev123:
+    project: lpiotr-composer-dev-1
+    region: us-central1
+    composer_environment: composer3-cluster
+    artifact_storage:
+      bucket: us-central1-composer3-clust-420a3e94-bucket
+      path_prefix: another-initialized-artifact-bucket
+    pipelines:
+      - source: initilized-pipeline.yaml
+    variables:
+      service_account: 959391033213-compute@developer.gserviceaccount.com
+      network_uri: projects/lpiotr-composer-dev-1/global/networks/default
+      subnetwork_uri: projects/lpiotr-composer-dev-1/regions/us-central1/subnetworks/default
+      region: us-central1
+      repository_name: weather-aggregation-repo
+      workflow_config_name: updated-subfolder-workflow
   dev:
     project: lpiotr-composer-dev-1
     region: us-central1
